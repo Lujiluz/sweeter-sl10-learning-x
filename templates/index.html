@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweeter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css' ) }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header">
+      <div class="container">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <h1 class="brand-name">Sweeter🍫</h1>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+              <div class="navbar-item has-dropdown is-hoverable py-3">
+                <a class="button navbar-link" id="profile-link">
+                  <figure class="image">
+                    <img src='static/{{user_data["profile_pict"] if user_data["profile_pict"] else user_data["default_profile_pict"]}}' alt="user-profile" class="is-rounded" />
+                  </figure>
+                  <strong class="mx-3">{{user_data['username']}}</strong>
+                </a>
+                <div class="navbar-dropdown is-right">
+                  <a class="navbar-item js-modal-trigger" data-target="profile-modal"> Profile </a>
+                  <a class="navbar-item" href="/settings"> Settings </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item"> Logout </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end of header -->
+
+    <!-- start of timeline -->
+    <div class="thread-container">
+      <div id="sweets-form" class="mt-6 mb-5">
+        <textarea placeholder="Write your sweets..." name="sweets" id="sweets" class="p-4"></textarea>
+        <button class="button is-danger mt-3" onClick="handlePost()">Send sweets🍫</button>
+      </div>
+      <hr class="divider mt-2" />
+      <section class="posts my-6" id="posts"></section>
+    </div>
+
+    <!-- modal box -->
+    <div class="modal" id="profile-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">{{user_data['username']}}'s profile</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <figure class="image is-96x96 mx-auto" id="profile-picture">
+            <img src='static/{{user_data["profile_pict"] if user_data["profile_pict"] else user_data["default_profile_pict"]}}' class="is-rounded" alt="profilePict" />
+          </figure>
+          <input type="file" id="file-input" style="display: none" />
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Text input" value="{{user_data['username']}}" id="username" />
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Bio</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Introduce yourself, sweety..." id="bio">{{user_data['profile_desc']}}</textarea>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <div class="buttons">
+            <button class="save-button button is-danger mt-3" onClick="handleSaveChanges()">Save changes</button>
+            <button class="button mt-3">Cancel</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- end of modal box -->
+    <script src="{{ url_for('static', filename='home.js' ) }}"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweeter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' ) }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="{{ url_for('static', filename='login.js' ) }}"></script>
+  </head>
+  <body>
+    {% if msg %}
+    <div class="msg is-hidden">{{msg}}</div>
+    {% endif %}
+    <form class="form" id="login-form">
+      <h1 class="brand-name">Sweeter🍫</h1>
+      <div class="field">
+        <label class="label">🍭 Username</label>
+        <div class="control">
+          <input class="input" type="text" id="username" />
+        </div>
+        <p class="username-empty has-text-danger is-size-7 pt-2 is-hidden">• Please, enter your username.</p>
+      </div>
+
+      <div class="field">
+        <label class="label">🍬 Password</label>
+        <div class="control">
+          <input class="input" type="password" id="password" />
+        </div>
+        <p class="password-empty has-text-danger is-size-7 pt-2 is-hidden">• Please, enter your password.</p>
+      </div>
+
+      <button class="button is-danger" onclick="log_in()">Log in</button>
+      <p class="has-text-centered mt-4 mb-2">Don't have an account? <a href="/sign_up" class="register-link">Sign up</a></p>
+    </form>
+  </body>
+</html>

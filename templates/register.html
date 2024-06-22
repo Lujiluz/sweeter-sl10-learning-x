@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweeter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css' ) }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="{{ url_for('static', filename='signup.js' ) }}"></script>
+  </head>
+  <body>
+    <form class="form my-5" id="signup-form">
+      <h1 class="brand-name">Sweeter🍫</h1>
+      <div class="field">
+        <label class="label">🍭 Username</label>
+        <div class="control username-control">
+          <input class="input" id="username" type="text" />
+        </div>
+        <p class="username-empty has-text-danger is-size-7 pt-2 is-hidden">• Please, enter your username.</p>
+        <p class="username-requirements has-text-warning is-size-7 pt-2">• Please enter 2-10 combination of characters, numbers, and these special characters (._-).</p>
+        <p class="username-existed has-text-danger is-size-7 pt-2 is-hidden">• Your username is already taken.</p>
+      </div>
+
+      <div class="field">
+        <label class="label">🍬 Password</label>
+        <div class="control">
+          <input class="input" id="password" type="password" />
+        </div>
+        <p class="pw-empty has-text-danger is-size-7 pt-2 is-hidden">• Please, enter your password.</p>
+        <p class="pw-requirements has-text-warning is-size-7 pt-2">• Your password should contains 8-20 characters and a combination of alphabetic characters, numbers, and these special characters (!@#$%^&*).</p>
+      </div>
+
+      <div class="field">
+        <label class="label">🍬 re-enter password</label>
+        <div class="control">
+          <input class="input is-disable" type="password" id="re-enter-password" disabled />
+        </div>
+        <p class="pw-2-empty has-text-danger is-size-7 pt-2 is-hidden">• Please re-enter your password!</p>
+        <p class="pw-2-notSame has-text-danger is-size-7 pt-2 is-hidden">• Please enter the correct answer!</p>
+      </div>
+
+      <button class="button is-danger" id="signup-btn">Sign up</button>
+      <button class="button is-outlined is-danger" id="clear-btn" onclick="clearAllForm()">Clear</button>
+      <p class="has-text-centered mt-4 mb-2">Already have an account? <a href="/login" class="register-link">Login</a></p>
+    </form>
+  </body>
+</html>

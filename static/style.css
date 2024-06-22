@@ -1,0 +1,118 @@
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #171717;
+}
+
+.input:focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.brand-name {
+  font-family: 'Poetsen One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem 1.5rem;
+  color: white;
+}
+
+#login-form {
+  width: 500px;
+  max-width: 60%;
+  background-color: #171717;
+  margin: 5px auto;
+  margin-top: 3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 14px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+  color: black;
+  width: 100%;
+  margin-top: 0.5rem;
+  background-color: #f5b15e;
+}
+
+.button:hover {
+  background-color: #f0c693;
+  box-shadow: 0px 0px 10px rgba(240, 198, 147, 0.5);
+}
+
+#clear-btn:hover {
+  background-color: #ff3860;
+  box-shadow: 0px 0px 10px rgba(255, 56, 96, 0.5);
+  color: #35020c;
+}
+
+.register-link {
+  text-decoration: none;
+  color: #ff8080;
+}
+
+#login-form > .control > input {
+  background-color: #171717;
+}
+
+/* sign-up page style */
+#signup-form {
+  width: 500px;
+  max-width: 60%;
+  background-color: #171717;
+  margin: 5px auto;
+  padding: 0.5rem 1rem;
+  border-radius: 14px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+/* end of sign-up page style */
+
+/* secrert page */
+.warning {
+  font-size: 2rem;
+}
+
+.surprise-container {
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-frame {
+  display: none;
+}
+
+.surprise-container > button {
+  background-color: #ff3860;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 8px;
+  animation: jedagJedug 4s infinite;
+  /* width: ; */
+}
+
+@keyframes jedagJedug {
+  25% {
+    background-color: white;
+    /* color: #ff3860; */
+  }
+  50% {
+    background-color: #ff3860;
+    /* color: white; */
+  }
+  75% {
+    background-color: white;
+    /* color: #ff3860; */
+  }
+  100% {
+    background-color: #ff3860;
+    /* color: white; */
+  }
+}
+/* end of secret page */

@@ -1,0 +1,143 @@
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.brand-name {
+  font-family: 'Poetsen One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 1.5rem;
+  color: white;
+}
+
+#profile-picture {
+  position: relative;
+  cursor: pointer;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+}
+
+#profile-picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.save-button {
+  width: fit-content;
+  color: black;
+  margin-top: 0.5rem;
+  background-color: #f5b15e;
+}
+
+.save-button:hover {
+  background-color: #f0c693;
+  box-shadow: 0px 0px 10px rgba(240, 198, 147, 0.5);
+}
+
+#profile-picture:hover img {
+  filter: brightness(50%);
+}
+
+#profile-picture::after {
+  content: 'Edit';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#profile-picture:hover::after {
+  opacity: 1;
+}
+
+.navbar-brand a.navbar-item:hover {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+.navbar-end > .navbar-item {
+  height: fit-content;
+  margin: 1rem 0px;
+}
+
+.navbar-item a.button:hover {
+  background-color: inherit !important;
+  color: inherit !important;
+  box-shadow: 0px 0px 10px rgba(121, 121, 121, 0.5);
+}
+
+#header {
+  border-bottom: 1px solid #f5b15e;
+}
+
+/* timeline style */
+.thread-container {
+  width: 600px;
+  max-width: 80%;
+  margin: 5px auto;
+  /* border: 1px solid white; */
+}
+
+#post-box {
+  box-shadow: 0px 1px 8px rgba(54, 54, 54, 0.5);
+  border: 0.5px solid rgba(54, 54, 54, 0.5);
+  border-radius: 3px;
+}
+
+.media-left a {
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+}
+
+.media-left a > img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thread-container > #sweets-form > textarea {
+  width: 100%;
+  height: 150px;
+  font-size: larger;
+  background-color: inherit;
+  color: white;
+  border-radius: 3px;
+  resize: none;
+  outline: none;
+  border: none;
+  box-shadow: 0px 1px 8px rgba(54, 54, 54, 0.5);
+}
+
+#sweets-form button {
+  width: fit-content;
+  color: black;
+  margin-top: 0.5rem;
+  background-color: #f5b15e;
+}
+#sweets-form button:hover {
+  background-color: #f0c693;
+  box-shadow: 0px 0px 10px rgba(240, 198, 147, 0.5);
+}
+.thread-container > textarea:focus {
+  outline: none !important;
+}
+
+/* .icon.is-outlined.is-danger {
+  color: #ff3860; 
+  border-radius: 50%;
+  padding: 0.2em; 
+} */
